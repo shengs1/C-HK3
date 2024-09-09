@@ -78,6 +78,7 @@ void PrintList(LinkedList l)
 			node = node->next;
 		}
 	}
+    cout <<endl;
 }
 Node* GetNode(LinkedList& l, int index)
 {
@@ -103,12 +104,12 @@ Node* Search(LinkedList l, int x)
 }
 
 int main() {
+    cout<<"Task 1"<<endl;
     LinkedList list;
     CreateList(list);
-
     Node* node;
     int n[7] ={13,11,9,7,5,3,1} ;
-    for (auto i = 0; i < 7; i++)
+    for (int i = 0; i < 7; i++)
 	{
 		node = CreateNode(n[i]);
 	
@@ -118,43 +119,46 @@ int main() {
     PrintList(list);
     cout<<endl;
     
+    cout<<"Task 2"<<endl;
     cout <<"Danh sach node them 2 vao dau"<<endl;
     Node* Node2 = CreateNode(2);
     AddHead(list, Node2);
     PrintList(list);
-    cout <<endl;
+    cout<<endl;
 
+    cout<<"Task 3"<<endl;
     cout <<"Danh sach node them 8 vao cuoi"<<endl;
     Node* Node8 = CreateNode(8);
     AddTail(list, Node8);
     PrintList(list);
-    cout <<endl;
+    cout<<endl;
 
+    cout<<"Task 4"<<endl;
     Node* NodeMid = GetNode(list,4);
     if (NodeMid != NULL)
 		cout << "Node o giua la: " << NodeMid->data << endl;
-    cout <<endl;
+    cout<<endl;
 
-    Node* search9InList = Search(list, 11);
-	if (search9InList != NULL)
-		cout << "11 was founded" << endl;
-	else
-		cout << "11 not Found" << endl;
 
-    int x;
-	int res = RemoveAfterQ(list, search9InList, x);
-	if (res)
+    int x = 11;
+    Node* searchNode = Search(list,x);
+	//if (searchNode != NULL)
+		//cout <<"So "<<x<<" Co trong danh sach" << endl;
+	//else    
+		//cout << "Not Found" << endl;
+    cout<<"Task 5"<<endl;
+    int RemoveNode;
+	int result = RemoveAfterQ(list, searchNode, RemoveNode);
+	if (result)
 	{
-		cout << "Data of node has been removed: " << x << endl;
-		cout << "List after removed: ";
+		cout << "So node bi xoa: " << RemoveNode << endl;
+		cout << "List sau khi xoa: ";
 		PrintList(list);
 		cout << endl;
 	}
 	else
 		cout << "Nothing is removed" << endl;
-
-
-
+    cout<<endl;
 
 
     return 0;

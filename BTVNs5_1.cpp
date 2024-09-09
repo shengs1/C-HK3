@@ -11,7 +11,7 @@ void bubbleSort(char ten[][8], int n)
                 strcpy(temp, ten[j]);
                 strcpy(ten[j], ten[j + 1]);
                 strcpy(ten[j + 1], temp);
-                //swap(ten[j], ten[j+1]); có thể dùng dùng hàm swap đỗi chổ
+                //swap(ten[j], ten[j+1]); có thể dùng dùng hàm swap đỗi ch
             }
         }
     }  
